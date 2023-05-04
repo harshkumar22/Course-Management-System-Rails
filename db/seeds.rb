@@ -127,3 +127,145 @@ course_publishes = CoursePublishe.create([
 ])
 
 p "Enrolled #{CoursePublishe.count} courses"
+
+# ******************************************************
+# ************** Progress Data ***************************
+# ******************************************************
+
+progresses = Progress.create([
+    {
+        course_enrollment_id: 2,
+        total_duration: 48,
+        watch_duration: 10,
+        completion_percentage: (10*100)/48
+    },
+
+    {
+        course_enrollment_id: 1,
+        total_duration: 37.5,
+        watch_duration: 10,
+        completion_percentage: (10*100)/37.5
+    }
+])
+
+p "Progess #{Progress.count} data"
+
+# ******************************************************
+# ************** Feedback Data ***************************
+# ******************************************************
+
+feedbacks = Feedback.create([
+    {
+        user_id: 8,
+        course_id: 1,
+        rating: 4,
+        review: "The course is well defined and organised"
+    },
+
+    {
+        user_id: 7,
+        course_id: 2,
+        rating: 4,
+        review: "The course is well defined and organised"
+    }
+])
+
+p "Feedback #{Feedback.count} data"
+
+# ******************************************************
+# ************** Syllabus Data ***************************
+# ******************************************************
+
+syllabuses = Syllabus.create([
+    {
+        course_id: 1,
+        module_no: 1,
+        video_link: "www.google.com"
+    },
+
+    {
+        course_id: 1,
+        module_no: 1,
+        video_link: "www.yahoo.com"
+    },
+
+    {
+        course_id: 1,
+        module_no: 1,
+        video_link: "www.bing.com"
+    },
+
+    {
+        course_id: 1,
+        module_no: 2,
+        video_link: "www.facebook.com"
+    },
+
+    {
+        course_id: 1,
+        module_no: 2,
+        video_link: "www.youtube.com"
+    },
+
+    {
+        course_id: 1,
+        module_no: 2,
+        video_link: "www.instagram.com"
+    },
+
+    {
+        course_id: 2,
+        module_no: 1,
+        video_link: "www.whatsapp.com"
+    },
+
+    {
+        course_id: 2,
+        module_no: 1,
+        video_link: "www.linkedin.com"
+    },
+
+    {
+        course_id: 2,
+        module_no: 2,
+        video_link: "www.snapchat.com"
+    }
+])
+
+p "Syllabus #{Syllabus.count} data"
+
+# ******************************************************
+# ************** Transaction Data ***************************
+# ******************************************************
+
+transactions = Transaction.create([
+    {
+        txn_id: 1,
+        user_id: 8,
+        course_id: 1,
+        amount: 99.99
+    },
+
+    {
+        txn_id: 1,
+        user_id: 8,
+        course_id: 2,
+        amount: 99.99
+    },
+
+    {
+        txn_id: 2,
+        user_id: 7,
+        course_id: 1,
+        amount: 99.99
+    },
+
+    {
+        txn_id: 2,
+        user_id: 7,
+        course_id: 2,
+        amount: 99.99
+    }
+])
+
+p "Transaction #{Transaction.count} data"
