@@ -7,258 +7,258 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# # ******************************************************
-# # **************** User Data ***************************
-# # ******************************************************
+# ******************************************************
+# **************** User Data ***************************
+# ******************************************************
 
-# users = User.create([
-#     {
-#         name: "Tony Stark",
-#         email: "stark@example.com",
-#         password: "qazwsxedc",
-#         contact: "9876543232"
-#     },
+users = User.create([
+    {
+        name: "Tony Stark",
+        email: "stark@example.com",
+        password: "qazwsxedc",
+        contact: "9876543232"
+    },
 
-#     {
-#         name: "Steve Rogers",
-#         email: "rogers@example.com",
-#         password: "qazwsxedc",
-#         contact: "9876545672"
-#     },
+    {
+        name: "Steve Rogers",
+        email: "rogers@example.com",
+        password: "qazwsxedc",
+        contact: "9876545672"
+    },
 
-#     {
-#         name: "Thor Odinson",
-#         email: "odinson@example.com",
-#         password: "qazwsxedc",
-#         contact: "9874563232"
-#     },
+    {
+        name: "Thor Odinson",
+        email: "odinson@example.com",
+        password: "qazwsxedc",
+        contact: "9874563232"
+    },
 
-#     {
-#         name: "Bruce Banner",
-#         email: "banner@example.com",
-#         password: "qazwsxedc",
-#         contact: "9456743232"
-#     },
+    {
+        name: "Bruce Banner",
+        email: "banner@example.com",
+        password: "qazwsxedc",
+        contact: "9456743232"
+    },
 
-#     {
-#         name: "Client Barton",
-#         email: "barton@example.com",
-#         password: "qazwsxedc",
-#         contact: "9456743232"
-#     },
+    {
+        name: "Client Barton",
+        email: "barton@example.com",
+        password: "qazwsxedc",
+        contact: "9456743232"
+    },
 
-#     {
-#         name: "Natasha Romanoff",
-#         email: "romanoff@example.com",
-#         password: "qazwsxedc",
-#         contact: "9856743232"
-#     }
-# ])
-
-
-# p "Created #{User.count} users"
-
-# # ******************************************************
-# # ************** Course Data ***************************
-# # ******************************************************
-
-# courses = Course.create([
-#     {
-#         name: "HTML, CSS & JavaScript",
-#         description: "In this course you will learn about the basic fundamentals for frontend web develpoment.",
-#         price: 99.99,
-#         duration: 37.5,
-#         rating: 4,
-#         category: "Web Development",
-#         validity: DateTime.new.change(year: 2024),
-#         drafting_status: true
-#     },
-
-#     {
-#         name: "Ruby and Rails",
-#         description: "In this course you will learn about the basic fundamentals for backend web develpoment.",
-#         price: 99.99,
-#         duration: 48,
-#         rating: 4,
-#         category: "Web Development",
-#         validity: DateTime.new.change(year: 2024),
-#         drafting_status: true
-#     },
-
-# ])
+    {
+        name: "Natasha Romanoff",
+        email: "romanoff@example.com",
+        password: "qazwsxedc",
+        contact: "9856743232"
+    }
+])
 
 
-# p "Created #{Course.count} courses"
+p "Created #{User.count} users"
 
-# # ******************************************************
-# # ************** Course Enrolled Data ***************************
-# # ******************************************************
+# ******************************************************
+# ************** Course Data ***************************
+# ******************************************************
 
-# course_enrollments = CourseEnrollment.create([
-#     {
-#         user_id: 8,
-#         course_id: 1,
-#         valid_till: DateTime.new.change(year: 2024)
-#     },
+courses = Course.create([
+    {
+        name: "HTML, CSS & JavaScript",
+        description: "In this course you will learn about the basic fundamentals for frontend web develpoment.",
+        price: 99.99,
+        duration: 37.5,
+        rating: 4,
+        category: "Web Development",
+        validity: DateTime.new.change(year: 2024),
+        drafting_status: true
+    },
 
-#     {
-#         user_id: 7,
-#         course_id: 2,
-#         valid_till: DateTime.new.change(year: 2024)
-#     }
-# ])
+    {
+        name: "Ruby and Rails",
+        description: "In this course you will learn about the basic fundamentals for backend web develpoment.",
+        price: 99.99,
+        duration: 48,
+        rating: 4,
+        category: "Web Development",
+        validity: DateTime.new.change(year: 2024),
+        drafting_status: true
+    },
 
-# p "Enrolled #{CourseEnrollment.count} courses"
+])
 
-# # ******************************************************
-# # ************** Course Published Data ***************************
-# # ******************************************************
 
-# course_publishes = CoursePublishe.create([
-#     {
-#         user_id: 3,
-#         course_id: 1
-#     },
+p "Created #{Course.count} courses"
 
-#     {
-#         user_id: 6,
-#         course_id: 2
-#     }
-# ])
+# ******************************************************
+# ************** Course Enrolled Data ***************************
+# ******************************************************
 
-# p "Enrolled #{CoursePublishe.count} courses"
+course_enrollments = CourseEnrollment.create([
+    {
+        user_id: 8,
+        course_id: 1,
+        valid_till: DateTime.new.change(year: 2024)
+    },
 
-# # ******************************************************
-# # ************** Progress Data ***************************
-# # ******************************************************
+    {
+        user_id: 7,
+        course_id: 2,
+        valid_till: DateTime.new.change(year: 2024)
+    }
+])
 
-# progresses = Progress.create([
-#     {
-#         course_enrollment_id: 2,
-#         total_duration: 48,
-#         watch_duration: 10,
-#         completion_percentage: (10*100)/48
-#     },
+p "Enrolled #{CourseEnrollment.count} courses"
 
-#     {
-#         course_enrollment_id: 1,
-#         total_duration: 37.5,
-#         watch_duration: 10,
-#         completion_percentage: (10*100)/37.5
-#     }
-# ])
+# ******************************************************
+# ************** Course Published Data ***************************
+# ******************************************************
 
-# p "Progess #{Progress.count} data"
+course_publishes = CoursePublishe.create([
+    {
+        user_id: 3,
+        course_id: 1
+    },
 
-# # ******************************************************
-# # ************** Feedback Data ***************************
-# # ******************************************************
+    {
+        user_id: 6,
+        course_id: 2
+    }
+])
 
-# feedbacks = Feedback.create([
-#     {
-#         user_id: 8,
-#         course_id: 1,
-#         rating: 4,
-#         review: "The course is well defined and organised"
-#     },
+p "Enrolled #{CoursePublishe.count} courses"
 
-#     {
-#         user_id: 7,
-#         course_id: 2,
-#         rating: 4,
-#         review: "The course is well defined and organised"
-#     }
-# ])
+# ******************************************************
+# ************** Progress Data ***************************
+# ******************************************************
 
-# p "Feedback #{Feedback.count} data"
+progresses = Progress.create([
+    {
+        course_enrollment_id: 2,
+        total_duration: 48,
+        watch_duration: 10,
+        completion_percentage: (10*100)/48
+    },
 
-# # ******************************************************
-# # ************** Syllabus Data ***************************
-# # ******************************************************
+    {
+        course_enrollment_id: 1,
+        total_duration: 37.5,
+        watch_duration: 10,
+        completion_percentage: (10*100)/37.5
+    }
+])
 
-# syllabuses = Syllabus.create([
-#     {
-#         course_id: 1,
-#         module_no: 1,
-#         video_link: "www.google.com"
-#     },
+p "Progess #{Progress.count} data"
 
-#     {
-#         course_id: 1,
-#         module_no: 1,
-#         video_link: "www.yahoo.com"
-#     },
+# ******************************************************
+# ************** Feedback Data ***************************
+# ******************************************************
 
-#     {
-#         course_id: 1,
-#         module_no: 1,
-#         video_link: "www.bing.com"
-#     },
+feedbacks = Feedback.create([
+    {
+        user_id: 8,
+        course_id: 1,
+        rating: 4,
+        review: "The course is well defined and organised"
+    },
 
-#     {
-#         course_id: 1,
-#         module_no: 2,
-#         video_link: "www.facebook.com"
-#     },
+    {
+        user_id: 7,
+        course_id: 2,
+        rating: 4,
+        review: "The course is well defined and organised"
+    }
+])
 
-#     {
-#         course_id: 1,
-#         module_no: 2,
-#         video_link: "www.youtube.com"
-#     },
+p "Feedback #{Feedback.count} data"
 
-#     {
-#         course_id: 1,
-#         module_no: 2,
-#         video_link: "www.instagram.com"
-#     },
+# ******************************************************
+# ************** Syllabus Data ***************************
+# ******************************************************
 
-#     {
-#         course_id: 2,
-#         module_no: 1,
-#         video_link: "www.whatsapp.com"
-#     },
+syllabuses = Syllabus.create([
+    {
+        course_id: 1,
+        module_no: 1,
+        video_link: "www.google.com"
+    },
 
-#     {
-#         course_id: 2,
-#         module_no: 1,
-#         video_link: "www.linkedin.com"
-#     },
+    {
+        course_id: 1,
+        module_no: 1,
+        video_link: "www.yahoo.com"
+    },
 
-#     {
-#         course_id: 2,
-#         module_no: 2,
-#         video_link: "www.snapchat.com"
-#     }
-# ])
+    {
+        course_id: 1,
+        module_no: 1,
+        video_link: "www.bing.com"
+    },
 
-# p "Syllabus #{Syllabus.count} data"
+    {
+        course_id: 1,
+        module_no: 2,
+        video_link: "www.facebook.com"
+    },
 
-# # ******************************************************
-# # ************** Transaction Data ***************************
-# # ******************************************************
+    {
+        course_id: 1,
+        module_no: 2,
+        video_link: "www.youtube.com"
+    },
 
-# transactions = Transaction.create([
-#     {
-#         user_id: 8,
-#         total_amount: 199.98,
-#         item_boughts: 2,
-#         payment_status: true
-#     },
+    {
+        course_id: 1,
+        module_no: 2,
+        video_link: "www.instagram.com"
+    },
 
-#     {
-#         user_id: 7,
-#         total_amount: 199.98,
-#         item_boughts: 2,
-#         payment_status: true
-#     }
-# ])
+    {
+        course_id: 2,
+        module_no: 1,
+        video_link: "www.whatsapp.com"
+    },
 
-# p "Transaction #{Transaction.count} data"
+    {
+        course_id: 2,
+        module_no: 1,
+        video_link: "www.linkedin.com"
+    },
 
-# # ******************************************************
-# # ************** Item Data ***************************
-# # ******************************************************
+    {
+        course_id: 2,
+        module_no: 2,
+        video_link: "www.snapchat.com"
+    }
+])
+
+p "Syllabus #{Syllabus.count} data"
+
+# ******************************************************
+# ************** Transaction Data ***************************
+# ******************************************************
+
+transactions = Transaction.create([
+    {
+        user_id: 8,
+        total_amount: 199.98,
+        item_boughts: 2,
+        payment_status: true
+    },
+
+    {
+        user_id: 7,
+        total_amount: 199.98,
+        item_boughts: 2,
+        payment_status: true
+    }
+])
+
+p "Transaction #{Transaction.count} data"
+
+# ******************************************************
+# ************** Item Data ***************************
+# ******************************************************
 
 item_boughts = ItemBought.create([
     {
