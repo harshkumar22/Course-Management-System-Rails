@@ -70,7 +70,7 @@ courses = Course.create([
         duration: 37.5,
         rating: 4,
         category: "Web Development",
-        validity: DateTime.new.change(year: 2024),
+        validity: 12,
         drafting_status: true
     },
 
@@ -81,7 +81,7 @@ courses = Course.create([
         duration: 48,
         rating: 4,
         category: "Web Development",
-        validity: DateTime.new.change(year: 2024),
+        validity: 12,
         drafting_status: true
     },
 
@@ -98,13 +98,13 @@ course_enrollments = CourseEnrollment.create([
     {
         user_id: 8,
         course_id: 1,
-        valid_till: DateTime.new.change(year: 2024)
+        valid_till: DateTime.new(2024,05,05,23,59,00)
     },
 
     {
         user_id: 7,
         course_id: 2,
-        valid_till: DateTime.new.change(year: 2024)
+        valid_till: DateTime.new(2024,05,05,23,59,00)
     }
 ])
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_04_123059) do
+ActiveRecord::Schema.define(version: 2023_05_05_071225) do
 
   create_table "certificates", force: :cascade do |t|
     t.integer "course_enrollment_id", null: false
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2023_05_04_123059) do
     t.decimal "duration", precision: 10, scale: 2, null: false
     t.integer "rating", null: false
     t.string "category", null: false
-    t.datetime "validity", null: false
+    t.integer "validity", null: false
     t.boolean "drafting_status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
