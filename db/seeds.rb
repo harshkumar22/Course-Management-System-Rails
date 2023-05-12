@@ -11,47 +11,47 @@
 # **************** User Data ***************************
 # ******************************************************
 
-users = User.create([
+users = User.create!([
     {
-        name: "Tony Stark",
+        uname: "Tony Stark",
         email: "stark@example.com",
-        password: "qazwsxedc",
-        contact: "9876543232"
+        contact: "9876543232",
+        password_digest: "qazwsxedc"
     },
 
     {
-        name: "Steve Rogers",
+        uname: "Steve Rogers",
         email: "rogers@example.com",
-        password: "qazwsxedc",
-        contact: "9876545672"
+        contact: "9876545672",
+        password_digest: "qazwsxedc"
     },
 
     {
-        name: "Thor Odinson",
+        uname: "Thor Odinson",
         email: "odinson@example.com",
-        password: "qazwsxedc",
-        contact: "9874563232"
+        contact: "9874563232",
+        password_digest: "qazwsxedc",
     },
 
     {
-        name: "Bruce Banner",
+        uname: "Bruce Banner",
         email: "banner@example.com",
-        password: "qazwsxedc",
-        contact: "9456743232"
+        contact: "9456743232",
+        password_digest: "qazwsxedc"
     },
 
     {
-        name: "Client Barton",
+        uname: "Client Barton",
         email: "barton@example.com",
-        password: "qazwsxedc",
-        contact: "9456743232"
+        contact: "9456743232",
+        password_digest: "qazwsxedc"
     },
 
     {
-        name: "Natasha Romanoff",
+        uname: "Natasha Romanoff",
         email: "romanoff@example.com",
-        password: "qazwsxedc",
-        contact: "9856743232"
+        contact: "9856743232",
+        password_digest: "qazwsxedc"
     }
 ])
 
@@ -64,7 +64,7 @@ p "Created #{User.count} users"
 
 courses = Course.create([
     {
-        name: "HTML, CSS & JavaScript",
+        cname: "HTML, CSS & JavaScript",
         description: "In this course you will learn about the basic fundamentals for frontend web develpoment.",
         price: 99.99,
         duration: 37.5,
@@ -75,7 +75,7 @@ courses = Course.create([
     },
 
     {
-        name: "Ruby and Rails",
+        cname: "Ruby and Rails",
         description: "In this course you will learn about the basic fundamentals for backend web develpoment.",
         price: 99.99,
         duration: 48,

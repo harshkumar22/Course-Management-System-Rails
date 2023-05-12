@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_05_071225) do
+ActiveRecord::Schema.define(version: 2023_05_12_100838) do
 
   create_table "certificates", force: :cascade do |t|
     t.integer "course_enrollment_id", null: false
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2023_05_05_071225) do
   end
 
   create_table "courses", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "cname", null: false
     t.text "description", null: false
     t.decimal "price", precision: 10, scale: 2, null: false
     t.decimal "duration", precision: 10, scale: 2, null: false
@@ -101,12 +101,12 @@ ActiveRecord::Schema.define(version: 2023_05_05_071225) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "uname", null: false
     t.string "email", null: false
-    t.string "password", null: false
     t.string "contact", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
   end
 
   add_foreign_key "certificates", "course_enrollments"
