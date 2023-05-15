@@ -1,1 +1,36 @@
 <h1>Welcome <%= @user.uname %> </h1>
+<div>
+    <%= link_to "Edit Profile", edit_user_path%>
+    <%= link_to "Add a Course", edit_user_path%>
+    <%= link_to "Log Out", logout_path %>
+</div>
+<div>
+    <h2>Course Bought</h2>
+    <table>
+        <tr>
+            <th>Course Name</th>
+            <th>Course Price</th>
+            <th>Valid Till</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+<div>
+    <h2>Course Published</h2>
+    <table>
+        <tr>
+            <th>Course Name</th>
+            <th>Course Price</th>
+            <th>Valid Till</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
