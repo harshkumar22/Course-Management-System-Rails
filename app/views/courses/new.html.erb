@@ -1,0 +1,39 @@
+<h1>Enter your Course details</h1>
+
+<%= form_with model: @course do |form| %>
+    <table>
+        <tr>
+            <td><%= form.label :cname, "Enter Course Name: " %></td>
+            <td><%= form.text_field :cname %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :description, "Enter Course Description: " %></td>
+            <td><%= form.text_area :description %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :price, "Enter Course Price: " %></td>
+            <td><%= form.number_field :price %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :duration, "Enter Course Duration: " %></td>
+            <td><%= form.number_field :duration %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :rating, "Enter Course Rating " %></td>
+            <td><%= form.number_field :rating %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :category, "Enter Course Category: " %></td>
+            <td><%= form.text_field :category %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :validity, "Enter Course Validity: " %></td>
+            <td><%= form.number_field :validity %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :drafting_status, "Enter Course Drafting_Dtatus: " %></td>
+            <td><%= form.range_field :drafting_status, in: 0..1 %></td>
+        </tr>
+        <tr><td><%= form.submit "Create Course" %></td></tr>
+    </table>
+<% end %>
