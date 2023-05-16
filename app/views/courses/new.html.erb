@@ -34,6 +34,6 @@
             <td><%= form.label :drafting_status, "Enter Course Drafting_Dtatus: " %></td>
             <td><%= form.range_field :drafting_status, in: 0..1 %></td>
         </tr>
-        <tr><td><%= form.submit "Create Course" %></td></tr>
+        <tr><td colspan="2" class="button-centre"><%= form.submit "Create Course", class: "button"  %></td></tr>
     </table>
 <% end %>

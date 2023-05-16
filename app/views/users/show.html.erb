@@ -1,12 +1,12 @@
 <h1>Welcome <%= @user.uname %> </h1>
 <div class="container-button">
-    <span class="button"><%= link_to "Edit Profile", edit_user_path%></span>
-    <span class="button"><%= link_to "Publish a Course", new_course_path %></span>
-    <span class="button"><%= link_to "Buy a Course", new_course_path %></span>
-    <span class="button"><%= link_to "Log Out", logout_url %></span>
+    <span><%= button_to "Edit Profile", edit_user_path, :method => :get, class: "button" %></span>
+    <span><%= button_to "Publish a Course", new_course_path, :method => :get, class: "button"  %></span>
+    <span><%= button_to "Buy a Course", new_course_path, :method => :get, class: "button"  %></span>
+    <span><%= button_to "Log Out", logout_url, :method => :get, class: "button"  %></span>
 </div>
 <div>
-    <h2>Course Bought</h2>
+    <h2 class="second-header">Course Bought</h2>
     <table>
         <tr>
             <th>Course Name</th>
@@ -21,7 +21,7 @@
     </table>
 </div>
 <div>
-    <h2>Course Published</h2>
+    <h2 class="second-header">Course Published</h2>
     <table>
         <tr>
             <th>Course Name</th>
