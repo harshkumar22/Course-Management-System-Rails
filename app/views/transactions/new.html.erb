@@ -3,6 +3,9 @@
         text-align: center;
     }
 </style>
+<div class="container-button" style="float:right;">
+    <span><%= button_to "Log Out", logout_url, :method => :get, class: "button"  %></span>
+</div>
 <h2 class="second-header">List of Courses Available</h2>
     <table>
         <tr>

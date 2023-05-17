@@ -4,7 +4,9 @@
     }
 </style>
 <h1>Modules of <i><%= Course.find(@syllabus.course_id).cname %> </i></h1>
-
+<div class="container-button" style="float:right;">
+    <span><%= button_to "Log Out", logout_url, :method => :get, class: "button"  %></span>
+</div>
 <table>
     <tr>
         <th>Module Number</th>
