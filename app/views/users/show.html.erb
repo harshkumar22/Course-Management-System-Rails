@@ -1,8 +1,8 @@
-<h1>Welcome <%= @user.uname %> </h1>
+<h1>Welcome <i><%= @user.uname %></i> </h1>
 <div class="container-button">
     <span><%= button_to "Edit Profile", edit_user_path, :method => :get, class: "button" %></span>
     <span><%= button_to "Publish a Course", new_course_path, :method => :get, class: "button"  %></span>
-    <span><%= button_to "Buy a Course", new_course_path, :method => :get, class: "button"  %></span>
+    <span><%= button_to "Buy a Course", new_transaction_path, :method => :get, class: "button"  %></span>
     <span><%= button_to "Log Out", logout_url, :method => :get, class: "button"  %></span>
 </div>
 <div>
@@ -10,14 +10,20 @@
     <table>
         <tr>
             <th>Course Name</th>
-            <th>Course Price</th>
+            <th>Bought On</th>
             <th>Valid Till</th>
+            <th>Click To Learn</th>
         </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
+        <% if (@course_enrollment.class)  %>
+            <% (@course_enrollment).each do |i|%>
+                <tr> 
+                    <td><%= Course.find(i.course_id).cname %></td>
+                    <td></td>
+                    <td><%= i.valid_till %></td>
+                    <td>Click</td>
+                </tr>
+            <% end %>
+        <% end %>
     </table>
 </div>
 <div>
@@ -26,7 +32,7 @@
         <tr>
             <th>Course Name</th>
             <th>Course Rating</th>
-            <th>Enrollemnt Count</th>
+            <th>Enrollment Count</th>
         </tr>
         
         <% if (@course_publishe.class)  %>

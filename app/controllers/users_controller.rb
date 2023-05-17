@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
     before_action :set_user, only: [:show]
     before_action :set_publish, only: [:show]
+    before_action :set_enrollment, only: [:show]
 
     def index
     end
@@ -36,5 +37,9 @@ class UsersController < ApplicationController
 
     def set_publish
         @course_publishe = CoursePublishe.where("user_id = ? ", params[:id])
+    end
+
+    def set_enrollment
+        @course_enrollment = CourseEnrollment.where("user_id = ? ", params[:id])
     end
 end

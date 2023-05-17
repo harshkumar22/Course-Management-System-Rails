@@ -3,7 +3,7 @@ class Course < ApplicationRecord
 
     has_many :course_enrollments
     has_many :course_publishes
+    has_many :transactions
     has_many :feedbacks
     has_many :syllabuses
-    has_many :item_boughts
 end

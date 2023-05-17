@@ -1,0 +1,28 @@
+<style>
+    th,td{
+        text-align: center;
+    }
+</style>
+<h2 class="second-header">List of Courses Available</h2>
+    <table>
+        <tr>
+            <th>Course Name</th>
+            <th>Course Rating</th>
+            <th>Course Price</th>
+            <th>Course Published On</th>
+            <th>Course Validity</th>
+            <th>Click To Buy</th>
+        </tr>
+        <% course = Course.all%>
+        <% count = 1 %>
+        <% (course).each do |i|%>
+            <tr> 
+                <td><%= i.cname %></td>
+                <td><%= i.rating %></td>
+                <td><%= i.price %></td>
+                <td><%= i.created_at %></td>
+                <td><%= i.validity %> days</td>
+                <td><%= button_to "Click Here", {:controller => "transactions", :action => "create", :user_id => session[:user_id], :course_id => i.id, :total_amount => i.price, :payment_status => true,} , :method => :post, class: "button"  %></td>
+            </tr>
+        <% end %>
+    </table>
