@@ -25,3 +25,11 @@
 ### Course Bought:
 
 <img src="app/assets/images/ScreenShot/CourseBought.png">
+
+### Course Module:
+
+<img src="app/assets/images/ScreenShot/Course Module.png">
+
+### Course Adding:
+
+<img src="app/assets/images/ScreenShot/Course Adding.png">
