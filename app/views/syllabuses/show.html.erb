@@ -1,0 +1,17 @@
+<style>
+    th,td{
+        text-align: center;
+    }
+</style>
+<h1>Modules of <i><%= Course.find(@syllabus.course_id).cname %> </i></h1>
+
+<table>
+    <tr>
+        <th>Module Number</th>
+        <th>Study Link</th>
+    </tr>
+    <tr>
+        <td><%= @syllabus.module_no %></td>
+        <td><a href="<%= @syllabus.video_link%>" target="_blank">Rails Fundamentals</a></td>
+    </tr>
+</table>
