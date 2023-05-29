@@ -52,7 +52,7 @@
                     <td><%= Course.find(i.course_id).rating %></td>
                     <td><%= CourseEnrollment.where(course_id: i.course_id).count %></td>
                     <td><%= button_to "Edit Syllabus", syllabus_path, method: :get, params: { course_id: i.course_id }, class: "button"  %></td>
-                    <td><%= button_to "Delete Course", courses_url, method: :get, params: { course_id: i.course_id }, class: "button"  %></td>
+                    <td><%= button_to "Delete Course", course_path(i.course_id), method: :delete, class: "button"  %></td>
                 </tr>
             <% end %>
         <% end %>

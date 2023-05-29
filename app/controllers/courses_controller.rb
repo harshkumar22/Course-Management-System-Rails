@@ -25,6 +25,25 @@ class CoursesController < ApplicationController
         end
     end
 
+
+    def destroy
+        @course = Course.find(params[:id])
+        CoursePublishe.find_by(course_id: @course.id).destroy
+        if CourseEnrollment.find_by(course_id: @course.id)
+            CourseEnrollment.find_by(course_id: @course.id).destroy_all
+        end
+        if Syllabus.find_by(course_id: @course.id)
+            Syllabus.find_by(course_id: @course.id).destroy_all
+        end
+        @course.delete
+
+        flash[:notice] = "Course deleted successfully."
+        user_session_id = session[:user_id]
+        user = User.find(user_session_id)
+        redirect_to user
+
+    end
+
     private
 
     def course_params
