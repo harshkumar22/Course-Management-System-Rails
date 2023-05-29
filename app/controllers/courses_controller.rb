@@ -30,12 +30,12 @@ class CoursesController < ApplicationController
         @course = Course.find(params[:id])
         CoursePublishe.find_by(course_id: @course.id).destroy
         if CourseEnrollment.find_by(course_id: @course.id)
-            CourseEnrollment.find_by(course_id: @course.id).destroy_all
+            CourseEnrollment.find_by(course_id: @course.id).destroy
         end
         if Syllabus.find_by(course_id: @course.id)
-            Syllabus.find_by(course_id: @course.id).destroy_all
+            Syllabus.find_by(course_id: @course.id).destroy
         end
-        @course.delete
+        @course.destroy
 
         flash[:notice] = "Course deleted successfully."
         user_session_id = session[:user_id]

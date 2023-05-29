@@ -15,7 +15,8 @@ class TransactionsController < ApplicationController
                 if @transaction.payment_status == true
                     user_session_id = session[:user_id]
                     user = User.find(user_session_id)
-                    @course_enrollment = CourseEnrollment.create(user_id: user.id, course_id: @transaction.course_id, valid_till: DateTime.now().next_day(30))
+                    valid_till = Course.find(params[:course_id]).validity
+                    @course_enrollment = CourseEnrollment.create(user_id: user.id, course_id: @transaction.course_id, valid_till: DateTime.now().next_day(valid_till))
                     @course_enrollment.save
                     redirect_to user
                 else
