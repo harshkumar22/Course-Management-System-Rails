@@ -15,6 +15,7 @@
     <table>
         <tr>
             <th>Course Name</th>
+            <th>Course Published By</th>
             <th>Bought On</th>
             <th>Valid Till</th>
             <th>Click To Learn</th>
@@ -23,6 +24,8 @@
             <% (@course_enrollment).each do |i|%>
                 <tr> 
                     <td><%= Course.find(i.course_id).cname %></td>
+                    <% u_id = CoursePublishe.find_by(course_id: i.course_id).user_id %>
+                    <td><%= User.find(u_id).uname %></td>
                     <td><%= Transaction.find_by(user_id: i.user_id, course_id: i.course_id).created_at %></td>
                     <td><%= i.valid_till %></td>
                     <td><%= button_to "Click Here", syllabus_path, method: :get, params: { course_id: i.course_id }, class: "button"  %></td>
@@ -38,6 +41,8 @@
             <th>Course Name</th>
             <th>Course Rating</th>
             <th>Enrollment Count</th>
+            <th>Edit Syllabus</th>
+            <th>Delete Course</th>
         </tr>
         
         <% if (@course_publishe.class)  %>
@@ -45,7 +50,9 @@
                 <tr> 
                     <td><%= Course.find(i.course_id).cname %></td>
                     <td><%= Course.find(i.course_id).rating %></td>
-                    <td>1</td>
+                    <td><%= CourseEnrollment.where(course_id: i.course_id).count %></td>
+                    <td><%= button_to "Edit Syllabus", syllabus_path, method: :get, params: { course_id: i.course_id }, class: "button"  %></td>
+                    <td><%= button_to "Delete Course", courses_url, method: :get, params: { course_id: i.course_id }, class: "button"  %></td>
                 </tr>
             <% end %>
         <% end %>
