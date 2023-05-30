@@ -5,7 +5,7 @@ class CoursesController < ApplicationController
 
     def new
         @course = Course.new
-        @course_publishe = CoursePublishe.new
+        @course_publishe = CoursePublish.new
     end
 
     def create
@@ -16,7 +16,7 @@ class CoursesController < ApplicationController
             if @course.drafting_status == true
                 user_session_id = session[:user_id]
                 user = User.find(user_session_id)
-                @course_publishe = CoursePublishe.create(user_id: user.id, course_id: @course.id)
+                @course_publishe = CoursePublish.create(user_id: user.id, course_id: @course.id)
                 @course_publishe.save
                 redirect_to user
             else 
@@ -28,7 +28,7 @@ class CoursesController < ApplicationController
 
     def destroy
         @course = Course.find(params[:id])
-        CoursePublishe.find_by(course_id: @course.id).destroy
+        CoursePublish.find_by(course_id: @course.id).destroy
         if CourseEnrollment.find_by(course_id: @course.id)
             CourseEnrollment.find_by(course_id: @course.id).destroy
         end

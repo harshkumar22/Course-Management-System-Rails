@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_17_014028) do
+ActiveRecord::Schema.define(version: 2023_05_30_060709) do
 
   create_table "certificates", force: :cascade do |t|
     t.integer "course_enrollment_id", null: false
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2023_05_17_014028) do
     t.index ["user_id"], name: "index_course_enrollments_on_user_id"
   end
 
-  create_table "course_publishes", primary_key: ["user_id", "course_id"], force: :cascade do |t|
+  create_table "course_publishes", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "course_id", null: false
     t.datetime "created_at", precision: 6, null: false

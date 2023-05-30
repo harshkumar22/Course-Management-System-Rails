@@ -24,7 +24,7 @@
             <% (@course_enrollment).each do |i|%>
                 <tr> 
                     <td><%= Course.find(i.course_id).cname %></td>
-                    <% u_id = CoursePublishe.find_by(course_id: i.course_id).user_id %>
+                    <% u_id = CoursePublish.find_by(course_id: i.course_id).user_id %>
                     <td><%= User.find(u_id).uname %></td>
                     <td><%= Transaction.find_by(user_id: i.user_id, course_id: i.course_id).created_at %></td>
                     <td><%= i.valid_till %></td>

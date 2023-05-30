@@ -51,7 +51,7 @@ class UsersController < ApplicationController
     end
 
     def set_publish
-        @course_publishe = CoursePublishe.where("user_id = ? ", params[:id])
+        @course_publishe = CoursePublish.where("user_id = ? ", params[:id])
     end
 
     def set_enrollment
