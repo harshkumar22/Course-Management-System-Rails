@@ -3,7 +3,7 @@
         text-align: center;
     }
 </style>
-<h1>Modules of <i><%= Course.find(@syllabus.course_id).cname %> </i></h1>
+<h1>Modules of <i> </i></h1>
 <div class="container-button" style="float:right;">
     <span><%= button_to "Log Out", logout_url, :method => :get, class: "button"  %></span>
 </div>
@@ -13,7 +13,5 @@
         <th>Study Link</th>
     </tr>
     <tr>
-        <td><%= @syllabus.module_no %></td>
-        <td><a href="<%= @syllabus.video_link%>" target="_blank">Rails Fundamentals</a></td>
     </tr>
 </table>

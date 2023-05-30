@@ -1,0 +1,19 @@
+<%= form_with model: @syllabus do |form| %>
+    <% count = Syllabus.where(course_id: params[:course_id]).count %>
+    <% count += 1%>
+    <table>
+        <tr>
+            <td>Module Number: </td>
+            <td>
+                <%= count %>
+                <%= form.hidden_field :module_no, value: count %>
+                <%= form.hidden_field :course_id, value: params[:course_id] %>
+            </td>
+        </tr>
+        <tr>
+            <td><%= form.label :video_link, "Enter Module Link: " %></td>
+            <td><%= form.text_field :video_link %></td>
+        </tr>
+        <tr><td colspan="2" class="button-centre"><%= form.submit class: "button" %></td></tr>
+    </table>
+<% end %>

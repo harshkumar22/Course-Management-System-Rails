@@ -13,11 +13,11 @@ class CoursesController < ApplicationController
     def create
         @course = Course.new(course_params)
         if @course.save
-            flash[:notice] = "Course named #{@course.cname}, added successfully."
+            flash[:notice] = "Course named #{@course.cname}, added successfully. Please add syllabus model"
             # redirect_to root_path
             @course_publishe = CoursePublish.create(user_id: @user.id, course_id: @course.id)
             @course_publishe.save
-            redirect_to new_syllabus_path
+            redirect_to new_syllabus_path(:course_id => @course.id)
         else 
             render 'new'
         end
