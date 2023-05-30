@@ -1,5 +1,7 @@
 class CoursesController < ApplicationController
 
+    before_action :authorize_user
+
     def index
     end
 
@@ -13,15 +15,11 @@ class CoursesController < ApplicationController
         if @course.save
             flash[:notice] = "Course named #{@course.cname}, added successfully."
             # redirect_to root_path
-            if @course.drafting_status == true
-                user_session_id = session[:user_id]
-                user = User.find(user_session_id)
-                @course_publishe = CoursePublish.create(user_id: user.id, course_id: @course.id)
-                @course_publishe.save
-                redirect_to user
-            else 
-                render 'new'
-            end
+            @course_publishe = CoursePublish.create(user_id: @user.id, course_id: @course.id)
+            @course_publishe.save
+            redirect_to new_syllabus_path
+        else 
+            render 'new'
         end
     end
 
@@ -38,9 +36,7 @@ class CoursesController < ApplicationController
         @course.destroy
 
         flash[:notice] = "Course deleted successfully."
-        user_session_id = session[:user_id]
-        user = User.find(user_session_id)
-        redirect_to user
+        redirect_to @user
 
     end
 
@@ -50,4 +46,9 @@ class CoursesController < ApplicationController
         params.require(:course).permit(:cname, :description, :price, :duration, :rating, :category, :validity, :drafting_status)
     end
     
+    def authorize_user
+        user_session_id = session[:user_id]
+        @user = User.find(user_session_id)
+    end
+
 end

@@ -19,13 +19,15 @@
         <% course = Course.all%>
         <% count = 1 %>
         <% (course).each do |i|%>
-            <tr> 
-                <td><%= i.cname %></td>
-                <td><%= i.rating %></td>
-                <td><%= i.price %></td>
-                <td><%= i.created_at %></td>
-                <td><%= i.validity %> days</td>
-                <td><%= button_to "Click Here", {:controller => "transactions", :action => "create", :user_id => session[:user_id], :course_id => i.id, :total_amount => i.price, :payment_status => true,} , :method => :post, class: "button"  %></td>
-            </tr>
+            <% if i.drafting_status == true %>
+                <tr> 
+                    <td><%= i.cname %></td>
+                    <td><%= i.rating %></td>
+                    <td><%= i.price %></td>
+                    <td><%= i.created_at %></td>
+                    <td><%= i.validity %> days</td>
+                    <td><%= button_to "Click Here", {:controller => "transactions", :action => "create", :user_id => session[:user_id], :course_id => i.id, :total_amount => i.price, :payment_status => true,} , :method => :post, class: "button"  %></td>
+                </tr>
+            <% end %>
         <% end %>
     </table>
