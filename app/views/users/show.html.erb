@@ -3,13 +3,8 @@
         text-align: center;
     }
 </style>
-<h1>Welcome <i><%= @user.uname %></i> </h1>
-<div class="container-button">
-    <span><%= button_to "Edit Profile", edit_user_path, :method => :get, class: "button" %></span>
-    <span><%= button_to "Publish a Course", new_course_path, :method => :get, class: "button"  %></span>
-    <span><%= button_to "Buy a Course", new_transaction_path, :method => :get, class: "button"  %></span>
-    <span><%= button_to "Log Out", logout_url, :method => :get, class: "button"  %></span>
-</div>
+<%= render partial: "shared/navigation" %>
+<h1>Welcome to your dashboard <i><%= @user.uname %></i> </h1>
 <div>
     <h2 class="second-header">Course Bought</h2>
     <table>
