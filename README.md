@@ -2,34 +2,50 @@
 
 ## Output ScreenShot
 
+<br>
+
 ### Welcome Page:
 
-<img src="app/assets/images/ScreenShot/Welcome.png">
+<img src="app/assets/images/ScreenShot/WelcomePage.png">
+
+<br>
 
 ### Sign Up:
 
 <img src="app/assets/images/ScreenShot/SignUp.png">
 
+<br>
+
 ### Sign In:
 
 <img src="app/assets/images/ScreenShot/SignIn.png">
 
+<br>
+
 ### Course Available:
 
-<img src="app/assets/images/ScreenShot/CourseAvailabe.png">
+<img src="app/assets/images/ScreenShot/BuyCourse.png">
+
+<br>
 
 ### Course Published:
 
-<img src="app/assets/images/ScreenShot/CoursePublished.png">
+<img src="app/assets/images/ScreenShot/PublishCourse.png">
+
+<br>
 
 ### Course Bought:
 
 <img src="app/assets/images/ScreenShot/CourseBought.png">
 
+<br>
+
 ### Course Module:
 
-<img src="app/assets/images/ScreenShot/Course Module.png">
+<img src="app/assets/images/ScreenShot/Syllabus.png">
 
-### Course Adding:
+<br>
 
-<img src="app/assets/images/ScreenShot/Course Adding.png">
+### Editing Profile:
+
+<img src="app/assets/images/ScreenShot/EditProfile.png">
