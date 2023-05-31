@@ -1,7 +1,5 @@
+<%= render partial: "shared/navigation" %>
 <h1>Enter your Course details</h1>
-<div class="container-button" style="float:right;">
-    <span><%= button_to "Log Out", logout_url, :method => :get, class: "button"  %></span>
-</div>
 <%= form_with model: @course do |form| %>
     <table>
         <tr>

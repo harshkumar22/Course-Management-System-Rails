@@ -1,3 +1,4 @@
+<%= render partial: "shared/navigation" %>
 <%= form_with model: @syllabus do |form| %>
     <% count = Syllabus.where(course_id: params[:course_id]).count %>
     <% count += 1%>
