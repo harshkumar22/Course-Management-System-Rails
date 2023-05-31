@@ -1,13 +1,8 @@
-<style>
-    th,td{
-        text-align: center;
-    }
-</style>
 <%= render partial: "shared/navigation" %>
-<h1>Welcome to your dashboard <i><%= @user.uname %></i> </h1>
-<div>
+<h1>Welcome <i><%= @user.uname %> 👋 </i> </h1>
+<div class="course-bought">
     <h2 class="second-header">Course Bought</h2>
-    <table>
+    <table class="course-bought-table">
         <tr>
             <th>Course Name</th>
             <th>Course Published By</th>
@@ -15,7 +10,7 @@
             <th>Valid Till</th>
             <th>Click To Learn</th>
         </tr>
-        <% if (@course_enrollment.class)  %>
+        <% if @course_enrollment.count != 0 %>
             <% (@course_enrollment).each do |i|%>
                 <tr> 
                     <td><%= Course.find(i.course_id).cname %></td>
@@ -26,12 +21,21 @@
                     <td><%= button_to "Click Here", syllabus_path, method: :get, params: { course_id: i.course_id }, class: "button"  %></td>
                 </tr>
             <% end %>
+        <% else %>
+           <tr>
+            <td colspan="5">
+                <div class="nothing">
+                    <h4>You haven't bought any course till now.</h4>
+                    <p>To buy a course visit <%= link_to "Buy Course", new_transaction_path %></p>
+                </div>
+            </td>
+           </tr>
         <% end %>
     </table>
 </div>
-<div>
+<div class="course-publish">
     <h2 class="second-header">Course Published</h2>
-    <table>
+    <table class="course-publish-table">
         <tr>
             <th>Course Name</th>
             <th>Course Rating</th>
@@ -40,7 +44,7 @@
             <th>Delete Course</th>
         </tr>
         
-        <% if (@course_publishe.class)  %>
+        <% if @course_publishe.count != 0  %>
             <% (@course_publishe).each do |i|%>
                 <tr> 
                     <td><%= Course.find(i.course_id).cname %></td>
@@ -50,6 +54,15 @@
                     <td><%= button_to "Delete Course", course_path(i.course_id), method: :delete, class: "button"  %></td>
                 </tr>
             <% end %>
+        <% else %>
+           <tr>
+            <td colspan="5">
+                <div class="nothing">
+                    <h4>You haven't published any course till now.</h4>
+                    <p>To buy a course visit <%= link_to "Publish Course",new_course_path %></p>
+                </div>
+            </td>
+           </tr>
         <% end %>
     </table>
 </div>
