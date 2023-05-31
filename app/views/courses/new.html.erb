@@ -1,7 +1,7 @@
 <%= render partial: "shared/navigation" %>
 <h1>Enter your Course details</h1>
 <%= form_with model: @course do |form| %>
-    <table>
+    <table class="form-table">
         <tr>
             <td><%= form.label :cname, "Enter Course Name: " %></td>
             <td><%= form.text_field :cname, placeholder: "C++ Fundamentals" %></td>

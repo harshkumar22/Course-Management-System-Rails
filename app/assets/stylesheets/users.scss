@@ -199,3 +199,9 @@ input * {
 .course-publish-table tr:nth-child(even) {
   background-color: #f2f2f2;
 }
+
+.form-table td {
+  font-weight: 800;
+  font-size: 1.65rem;
+  text-shadow: 0.2rem 0.2rem 0.2rem white;
+}

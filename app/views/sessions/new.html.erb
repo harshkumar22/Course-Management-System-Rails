@@ -1,7 +1,7 @@
 <h1>Welcome to Sign In Page</h1>
 
 <%= form_with scope: :session, url: login_path do |form| %>
-    <table>
+    <table class="form-table">
         <tr>
             <td><%= form.label :email, "Enter Your Email: " %></td>
             <td><%= form.email_field :email, placeholder: "rogerssteve@example.com" %></td>
