@@ -4,11 +4,11 @@
     <table>
         <tr>
             <td><%= form.label :email, "Enter Your Email: " %></td>
-            <td><%= form.email_field :email %></td>
+            <td><%= form.email_field :email, placeholder: "rogerssteve@example.com" %></td>
         </tr>
         <tr>
             <td><%= form.label :password, "Enter Your Password: " %></td>
-            <td><%= form.password_field :password %></td>
+            <td><%= form.password_field :password, placeholder: "**********" %></td>
         </tr>
         <tr><td colspan="2" class="button-centre"><%= form.submit "Sign In", class: "button" %></td></tr>
     </table>
