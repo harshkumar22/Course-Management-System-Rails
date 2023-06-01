@@ -22,6 +22,14 @@
 
 <br>
 
+<br>
+
+### Dashboard:
+
+<img src="app/assets/images/ScreenShot/Dashboard.png">
+
+<br>
+
 ### Course Available:
 
 <img src="app/assets/images/ScreenShot/BuyCourse.png">
@@ -43,6 +51,14 @@
 ### Course Module:
 
 <img src="app/assets/images/ScreenShot/Syllabus.png">
+
+<br>
+
+<br>
+
+### Create Module:
+
+<img src="app/assets/images/ScreenShot/Module.png">
 
 <br>
 

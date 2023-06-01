@@ -11,14 +11,14 @@ class SyllabusesController < ApplicationController
         if @syllabus.save
             flash[:notice] = "Syllabus for course_id #{@syllabus.course_id} is updated"
                 # redirect_to root_path
-            redirect_to @syllabus
+            redirect_to new_syllabus_path(:course_id => @syllabus.course_id)
         else 
             render 'new'
         end
     end
 
     def show 
-        # @Syllabus = Syllabus.find(params[:course_id])
+        @syllabus = Syllabus.find_by("course_id = ? ",params[:course_id])
     end
 
     private
@@ -28,7 +28,7 @@ class SyllabusesController < ApplicationController
     end
 
     def syllabus_params
-        params.require(:syllabus).permit(:course_id, :module_no, :video_link)
+        params.require(:syllabus).permit(:course_id, :module_no, :video_link, :module_name)
     end
 
 

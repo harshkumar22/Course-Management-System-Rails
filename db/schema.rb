@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_30_060709) do
+ActiveRecord::Schema.define(version: 2023_06_01_054552) do
 
   create_table "certificates", force: :cascade do |t|
     t.integer "course_enrollment_id", null: false
@@ -73,10 +73,11 @@ ActiveRecord::Schema.define(version: 2023_05_30_060709) do
 
   create_table "syllabuses", primary_key: ["course_id", "module_no", "video_link"], force: :cascade do |t|
     t.integer "course_id", null: false
-    t.bigint "module_no", null: false
+    t.integer "module_no", null: false
     t.string "video_link", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "module_name", null: false
     t.index ["course_id"], name: "index_syllabuses_on_course_id"
   end
 
