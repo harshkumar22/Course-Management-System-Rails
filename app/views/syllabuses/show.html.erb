@@ -11,7 +11,7 @@
         <th>Module Name</th>
         <th>Study Link</th>
     </tr>
-    <% syllabus = Syllabus.where(params[:course_id]) %>
+    <% syllabus = Syllabus.where(course_id: params[:course_id]) %>
     <% if syllabus.count != 0 %>
         <% (syllabus).each do |i|%>
             <tr> 
