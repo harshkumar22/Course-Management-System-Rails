@@ -9,7 +9,8 @@ class SyllabusesController < ApplicationController
     def create
         @syllabus = Syllabus.new(syllabus_params)
         if @syllabus.save
-            flash[:notice] = "Syllabus for course_id #{@syllabus.course_id} is updated"
+            course_name = Course.find(@syllabus.course_id).cname
+            flash[:notice] = "Syllabus for course #{course_name} is updated"
                 # redirect_to root_path
             redirect_to new_syllabus_path(:course_id => @syllabus.course_id)
         else 
