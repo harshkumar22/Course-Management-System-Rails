@@ -10,6 +10,10 @@
         <th>Module Number</th>
         <th>Module Name</th>
         <th>Study Link</th>
+        <% owner_check = CoursePublish.find_by(user_id: session[:user_id], course_id: params[:course_id]) %>
+        <% if owner_check %>
+          <th>Edit Module </th>
+        <% end %>
     </tr>
     <% syllabus = Syllabus.where(course_id: params[:course_id]) %>
     <% if syllabus.count != 0 %>
@@ -18,6 +22,9 @@
                 <td><%= i.module_no %></td>
                 <td><%= i.module_name %></td>
                 <td><a href="<%= i.video_link %>" class="button" >Click Here</a></td>
+                <% if owner_check %>
+                    <td><%= link_to "Click To Edit", edit_syllabus_path(i.module_no, params[:course_id]), class: "button"  %></td>
+                <% end %>
             </tr>
         <% end %>
     <% else %>

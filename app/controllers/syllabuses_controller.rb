@@ -1,6 +1,6 @@
 class SyllabusesController < ApplicationController
 
-    before_action :set_syllabus, only: [:show]
+    before_action :set_syllabus, only: [:show, :edit, :update]
 
     def new
         @syllabus = Syllabus.new
@@ -18,6 +18,23 @@ class SyllabusesController < ApplicationController
         end
     end
 
+
+    def edit
+        @syllabus = Syllabus.find_by(module_no: params[:id], course_id: params[:format])
+        @@c_id = params[:format]
+    end
+
+    def update
+        # @syllabus = Syllabus.find_by(module_no: params[:id], course_id: @@c_id)
+        # if @syllabus.update(syllabus_params)
+        #     flash[:notice] = "your has been updated"
+        #     # redirect_to root_path
+        #     redirect_to @syllabus
+        # else 
+        #     render :edit, status: :unprocessable_entity
+        # end
+    end
+
     def show 
         @syllabus = Syllabus.find_by("course_id = ? ",params[:course_id])
     end
@@ -25,7 +42,7 @@ class SyllabusesController < ApplicationController
     private
 
     def set_syllabus
-        @syllabus = Syllabus.find_by("course_id = ? ",params[:course_id])
+        @syllabus = Syllabus.find_by(course_id: params[:course_id])
     end
 
     def syllabus_params

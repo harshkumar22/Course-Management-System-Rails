@@ -1,0 +1,22 @@
+<%= render partial: "shared/navigation" %>
+<%= form_with model: @syllabus do |form| %>
+    <table class="form-table">
+        <tr>
+            <td>
+                <%= form.hidden_field :module_no %>
+                <%= form.hidden_field :course_id, value: params[:format] %>
+            </td>
+        </tr>
+        <tr>
+            <td><%= form.label :module_name, "Enter Module Name: " %></td>
+            <td><%= form.text_field :module_name %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :video_link, "Enter Module Link: " %></td>
+            <td><%= form.text_field :video_link %></td>
+        </tr>
+        <tr>
+            <td class="button-centre" colspan="2"><%= form.submit class: "button" %></td>
+        </tr>
+    </table>
+<% end %>
